@@ -10,6 +10,7 @@
 
 export default {
 	async fetch(request, env, ctx) {
+		console.log("Logging:" + request.url)
 		return new Response('Hello World!');
 	},
 };
