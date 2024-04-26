@@ -10,7 +10,20 @@
 
 export default {
 	async fetch(request, env, ctx) {
-		console.log("Logging:" + request.url)
-		return new Response('Hello World!');
+		if(request.url == "https://www.cloudfalreworkers.com/test"){
+			return new Response ('Hello Worker!', {
+				headers: {
+					'content-type': 'text/plain',
+				},
+			});
+		}
+		else {
+			return new Response('Error Worker! Wrong URL', {
+				headers: {
+					'content-type': 'text/plain'
+				},
+			});	
+		}
+		
 	},
 };
